@@ -1,8 +1,18 @@
 import * as exampleCommand from './exampleCommand';
+import * as summary from './summary';
+import * as stats from './stats';
+import * as team from './team'
+import * as debug from './debug';
 
-const commands = {
+export const commands = {
   [exampleCommand.command]: exampleCommand.handler,
+  [summary.command]: summary.handler,
+  [stats.command]: stats.handler,
+  [team.command]: team.handler
 };
 
-export default commands;
+export const routers = {
+  '/team': team.router,
+  '/debug': debug.router
+};
 
